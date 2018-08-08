@@ -16,6 +16,7 @@ export const  fetchPosts =() =>dispatch =>
 //addedPost
 export const  createPost=(postData) =>dispatch =>
 {
+    console.log('action called');
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method:'POST',
         headers:{
