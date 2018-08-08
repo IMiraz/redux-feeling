@@ -12,7 +12,7 @@ class Posts extends Component {
 
   render() {
 
- const postitem = this.props.post.map(data => (
+ const postitem = this.props.posts.map(data => (
      <div key={data.id}>
   <p>{data.id}</p>
   <p>{data.title}</p>
@@ -29,9 +29,9 @@ class Posts extends Component {
     )
   }
 }
-const mapStateToProps = state => {
-posts:state.posts.items;
 
-}
+const mapStateToProps = state => ({
+ posts:state.posts.items
+});
 
 export default connect(mapStateToProps,{fetchPosts}) (Posts);
