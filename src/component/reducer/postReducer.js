@@ -4,7 +4,6 @@ const initiateState = {
 items:[],
 item:{}
 }
-
 export default function (state = initiateState, action)
 {
      switch(action.type) {
