@@ -8,6 +8,12 @@ item:{}
 export default function (state = initiateState, action)
 {
      switch(action.type) {
+         case FETCH_POSTS:
+console.log('work')
+         return {
+             ...state,
+             items:action.payLoad
+         }
          default:
          return state;
      }

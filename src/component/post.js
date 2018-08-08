@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux';
+import {fetchPosts} from './action/postAction'
 
 class Posts extends Component {
 
+    componentWillMount(){
+        this.props.fetchPosts();
+
+    }
 
 
   render() {
 
- const postitem = this.state.post.map(data => (
+ const postitem = this.props.post.map(data => (
      <div key={data.id}>
   <p>{data.id}</p>
   <p>{data.title}</p>
@@ -23,5 +29,9 @@ class Posts extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+posts:state.posts.items;
 
-export default Posts
+}
+
+export default connect(mapStateToProps,{fetchPosts}) (Posts);
